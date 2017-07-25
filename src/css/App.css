@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 .App-header {
   height: 25px;
@@ -13,4 +13,10 @@
 
 .App-intro {
   font-size: large;
+}
+
+@media (min-width: 48em) {
+  .App {
+    text-align: center;
+  }
 }

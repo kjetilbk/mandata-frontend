@@ -36,6 +36,24 @@
 .coalition-support {
   margin: 0;
   font-size: 2.4em;
+  font-family: 'Lato', 'sans-serif';
+  font-weight: 900;
+}
+
+.coalition-support-percentage {
+  font-size: 18px;
+  float: right;
+  margin-top: 6px;
+}
+
+.coalition-support-percentage.nydalen {
+  color: #004F8B;
+  float: right;
+}
+
+.coalition-support-percentage.opposisjonen {
+  color: #e4002b;
+  float: left;
 }
 
 .coalition-support.nydalen {
@@ -89,10 +107,12 @@
   }
   .coalition-support {
     font-size: 4.4em;
-    font-weight: 900;
   }
-
   .coalition-name {
     margin-bottom: -5px;
+  }
+  .coalition-support-percentage {
+    font-size: 30px;
+    margin-top: 11px;
   }
 }
