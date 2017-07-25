@@ -12,7 +12,7 @@ class Content extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="body">
         <h1>
           Hvem vinner valget?
         </h1>
