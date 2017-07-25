@@ -44,12 +44,20 @@
 }
 
 .coalition-support.nydalen {
-  color: blue;
+  color: #004F8B;
   float: right;
 }
 
+.left-color {
+  background-color: #e4002b;
+}
+
+.right-color {
+  background-color: #004F8B;
+}
+
 .coalition-support.opposisjonen {
-  color: red;
+  color: #e4002b;
   float: left;
 }
 

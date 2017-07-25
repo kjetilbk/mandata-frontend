@@ -5,8 +5,8 @@ const Barometer = ({leftSupport}) => {
   const rightWidth = (1 - leftSupport)*100 + "%";
   return (
     <div className="barometeret">
-      <div className="barometerhalf" style={{width: leftWidth, backgroundColor: 'red'}}></div>
-      <div className="barometerhalf" style={{width: rightWidth, backgroundColor: 'blue'}}></div>
+      <div className="barometerhalf left-color" style={{width: leftWidth}}></div>
+      <div className="barometerhalf right-color" style={{width: rightWidth}}></div>
     </div>
   );
 }
