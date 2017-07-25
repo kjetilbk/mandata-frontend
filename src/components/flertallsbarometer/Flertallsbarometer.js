@@ -6,42 +6,42 @@ import Barometer from './Barometer';
 const opposisjonen = [
   {
     navn: "Arbeiderpartiet",
-    forkortelse: "ap"
+    forkortelse: "Ap"
   },
   {
     navn: "Sosialistisk Venstreparti",
-    forkortelse: "sv"
+    forkortelse: "SV"
   },
   {
     navn: "Senterpartiet",
-    forkortelse: "sp"
+    forkortelse: "Sp"
   },
   {
     navn: "Miljøpartiet de Grønne",
-    forkortelse: "mdg"
+    forkortelse: "MDG"
   },
   {
     navn: "Rødt",
-    forkortelse: "r"
+    forkortelse: "R"
   }
 ];
 
 const nydalen = [
   {
     navn: "Kristelig folkeparti",
-    forkortelse: "krf"
+    forkortelse: "KrF"
   },
   {
     navn: "Venstre",
-    forkortelse: "v"
+    forkortelse: "V"
   },
   {
     navn: "Høyre",
-    forkortelse: "h"
+    forkortelse: "H"
   },
   {
     navn: "Fremskrittspartiet",
-    forkortelse: "frp"
+    forkortelse: "Frp"
   }
 ]
 
@@ -53,8 +53,14 @@ class Flertallsbarometer extends Component {
         <h3>
           Sjanse for flertall:
         </h3>
-        <Koalisjon navn="Opposisjonen" partier={opposisjonen} farge="red" posisjon="left" support={0.997} />
-        <Koalisjon navn="Nydalen" partier={nydalen} farge="blue" posisjon="right" support={0.0003} />
+        <div className="row">
+          <div className="col-xs-6">
+            <Koalisjon navn="Opposisjonen" partier={opposisjonen} farge="red" posisjon="left" support={0.997} />
+          </div>
+          <div className="col-xs-6">
+            <Koalisjon navn="Nydalen" partier={nydalen} farge="blue" posisjon="right" support={0.0003} />
+          </div>
+        </div>
         <Barometer leftSupport={0.997} />
       </div>
 
