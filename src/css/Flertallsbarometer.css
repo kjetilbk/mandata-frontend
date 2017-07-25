@@ -34,6 +34,7 @@
   display: inline-block;
   margin: 0;
   font-size: 20px;
+  font-weight: 400;
 }
 
 .coalition-support {
@@ -54,6 +55,7 @@
 
 .nydalen {
   float: right;
+  text-align: right;
 }
 
 .opposisjonen {

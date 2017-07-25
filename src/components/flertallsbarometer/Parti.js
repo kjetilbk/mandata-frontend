@@ -1,11 +1,9 @@
 import React from 'react';
-import logoer from '../../tools/partilogoer';
 
-
-const Parti = ({navn, forkortelse}) => {
+const Parti = ({navn, forkortelse, logo}) => {
   return (
     <div className="parti">
-      <img className="partilogo" src={logoer[forkortelse]} alt={forkortelse + ' logo'} />
+      <img className="partilogo" src={logo} alt={forkortelse.toLowerCase() + ' logo'} />
       <p className="partinavn">{navn}</p>
     </div>
   );
