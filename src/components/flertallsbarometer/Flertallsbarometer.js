@@ -3,6 +3,7 @@ import '../../css/Flertallsbarometer.css';
 import Koalisjon from './Koalisjon';
 import Barometer from './Barometer';
 import partier from '../../tools/partier';
+import formatProbability from '../../tools/helpers';
 
 const opposisjonen = [
   partier.r,
@@ -21,7 +22,7 @@ const nydalen = [
 
 class Flertallsbarometer extends Component {
   render() {
-    const rightSupport = parseFloat((this.props.nydalenSupport*100).toFixed(2));
+    const rightSupport = formatProbability(this.props.nydalenSupport);
     const leftSupport = 100 - rightSupport;
     return (
       <div className="modul">

@@ -10,8 +10,8 @@
 }
 
 .partilogo{
-  height: 30px;
-  display: block;
+  height: 15px;
+  display: inline-block;
 }
 
 .partinavn {
@@ -95,6 +95,9 @@
   }
   .partinavn {
     display: inline;
+  }
+  .partilogo{
+    height: 30px;
   }
   .partiforkortelser {
     display: none;

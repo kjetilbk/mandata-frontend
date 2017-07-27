@@ -1,17 +1,17 @@
 import { combineReducers } from 'redux';
 import {
-  FETCH_NYDALEN_SUPPORT
+  FETCH_ALTERNATIVE_SUPPORT
 } from '../actions/frontPageActions';
 
-const nydalenSupportReducer = (state = -1, action) => {
+const alternativeSupportReducer = (state = {}, action) => {
   switch (action.type) {
-    case FETCH_NYDALEN_SUPPORT:
-      return action.nydalenSupport;
+    case FETCH_ALTERNATIVE_SUPPORT:
+      return action.alternativeSupport;
     default:
       return state;
   }
 };
 
 export default combineReducers({
-  nydalenSupport: nydalenSupportReducer
+  alternativeSupport: alternativeSupportReducer
 });

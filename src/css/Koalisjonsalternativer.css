@@ -1,5 +1,8 @@
 .alternativ {
   border-right: 1px solid grey;
+}
+
+.alternativ > div {
   text-align: center;
 }
 
@@ -18,7 +21,25 @@
   vertical-align: 9px;
 }
 
+.koalisjonspartilogo{
+  display: none;
+}
+
+.alt-logo-row {
+  margin-bottom: 10px;
+}
+
 @media (min-width: 48em) {
+  .koalisjonspartilogo {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .koalisjonspartinavn{
+    display: none;
+  }
+
   .alternativ-support{
     font-size: 2.3em;
     margin-top: 0.5em;

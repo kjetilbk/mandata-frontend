@@ -1,14 +1,14 @@
-export const FETCH_NYDALEN_SUPPORT = 'FETCH_NYDALEN_SUPPORT';
+export const FETCH_ALTERNATIVE_SUPPORT = 'FETCH_ALTERNATIVE_SUPPORT';
 
 const apiBaseUrl = "http://api.mandata.no";
 
-export function fetchNydalenSupport() {
+export function fetchAlternativeSupport() {
   return function (dispatch) {
-    return fetch(`${apiBaseUrl}/utfall/nydalen`)
+    return fetch(`${apiBaseUrl}/utfall`)
       .then(response => response.json())
-      .then(nydalenSupport => dispatch({
-        type: FETCH_NYDALEN_SUPPORT,
-        nydalenSupport
+      .then(alternativeSupport => dispatch({
+        type: FETCH_ALTERNATIVE_SUPPORT,
+        alternativeSupport
       }));
   };
 }
