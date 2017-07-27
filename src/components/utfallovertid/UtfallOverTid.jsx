@@ -3,6 +3,7 @@ import Graf from './Graf.jsx';
 import { isEmpty } from '../../tools/helpers';
 import '../../css/UtfallOverTid.css'
 import DateLabel from './DateLabel.jsx';
+import Legend from './Legend.jsx'
 
 const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, mousePosition, updateDateLabel, dateLabel}) => {
   const drawData = isEmpty(historicSupport) ? [] : historicSupport.map((support, index) => ({
@@ -39,6 +40,7 @@ const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, m
   return (
     <div className="modul graph" onMouseMove={updateMousePosition}>
       <h3>{headline}</h3>
+      <Legend dataDescription={dataDescription} />
       {isEmpty(historicSupport) ? null : <Graf data={drawData} dataDescription={dataDescription} width={width} updateDateLabel={updateDateLabel} />}
       <DateLabel dateLabel={dateLabel} xPosition={mousePosition.x} width={width} />
     </div>

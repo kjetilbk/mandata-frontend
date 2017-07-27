@@ -1,5 +1,4 @@
 import React from 'react';
-import {LineChart} from 'react-d3-basic';
 import { LineTooltip} from 'react-d3-tooltip';
 import Tooltip from './Tooltip.jsx'
 

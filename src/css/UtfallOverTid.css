@@ -66,3 +66,35 @@
 .graph {
   position: relative;
 }
+
+.legend {
+  display: none;
+}
+
+.graf-legend {
+  width: 100%;
+  text-align: center;
+}
+
+.legend-elems{
+  text-align: center;
+  display: inline-block;
+}
+
+.lelem {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.legend-name {
+  display: inline-block;
+  margin: 0 auto;
+}
