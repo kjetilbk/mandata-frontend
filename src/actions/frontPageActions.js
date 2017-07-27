@@ -1,6 +1,8 @@
 export const FETCH_ALTERNATIVE_SUPPORT = 'FETCH_ALTERNATIVE_SUPPORT';
 export const FETCH_HISTORIC_SUPPORT = 'FETCH_HISTORIC_SUPPORT';
 export const UPDATE_WINDOW_DIMENSIONS = 'UPDATE_WINDOW_DIMENSIONS';
+export const UPDATE_MOUSE_POSITION = 'UPDATE_MOUSE_POSITION';
+export const UPDATE_DATE_LABEL = 'UPDATE_DATE_LABEL';
 
 const apiBaseUrl = "http://api.mandata.no";
 
@@ -31,5 +33,20 @@ export function updateWindowHeightAndWidth(width, height) {
     type: UPDATE_WINDOW_DIMENSIONS,
     width,
     height
+  };
+};
+
+export function updateMouseXandY(x, y) {
+  return {
+    type: UPDATE_MOUSE_POSITION,
+    x,
+    y
+  };
+};
+
+export function updateDateLabel(dateLabel) {
+  return {
+    type: UPDATE_DATE_LABEL,
+    dateLabel
   };
 };

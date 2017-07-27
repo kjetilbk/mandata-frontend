@@ -1,0 +1,68 @@
+.focus__inner_circle {
+  visibility: hidden;
+}
+
+.focus__outer_circle {
+  visibility: hidden;
+}
+
+.react-d3-basics__voronoi_utils__focus > line {
+  stroke: black;
+}
+
+.react-d3-basic__line{
+  stroke-width: 2px;
+}
+
+.axis.y > g:nth-child(n) {
+  opacity: 0;
+}
+
+.axis.y > g:nth-child(1) {
+  opacity: 1;
+}
+
+.axis.y > g:nth-child(6) {
+  opacity: 1;
+}
+
+.axis.y > g:nth-child(11) {
+  opacity: 1;
+}
+
+[text-anchor="middle"] > g:nth-child(n) {
+  opacity: 0;
+}
+
+[text-anchor="middle"] > g:nth-child(19) {
+  opacity: 1;
+}
+
+[text-anchor="middle"] > g:nth-child(1) {
+  opacity: 1;
+}
+
+[text-anchor="end"] > g:nth-child(n) {
+  opacity: 0;
+}
+
+[text-anchor="end"] > g:nth-child(6) {
+  opacity: 1;
+}
+
+[text-anchor="end"] > g:nth-child(11) {
+  opacity: 1;
+}
+
+[text-anchor="end"] > g:nth-child(1) {
+  opacity: 1;
+}
+
+.date-label {
+  bottom: 15px;
+  position: absolute;
+}
+
+.graph {
+  position: relative;
+}

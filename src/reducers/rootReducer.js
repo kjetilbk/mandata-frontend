@@ -2,7 +2,9 @@ import { combineReducers } from 'redux';
 import {
   FETCH_ALTERNATIVE_SUPPORT,
   FETCH_HISTORIC_SUPPORT,
-  UPDATE_WINDOW_DIMENSIONS
+  UPDATE_WINDOW_DIMENSIONS,
+  UPDATE_MOUSE_POSITION,
+  UPDATE_DATE_LABEL
 } from '../actions/frontPageActions';
 
 const alternativeSupportReducer = (state = {}, action) => {
@@ -35,8 +37,31 @@ const windowDimensionReducer = (state = {}, action) => {
   }
 };
 
+const mousePositionReducer = (state = {x: null, y: null}, action) => {
+  switch (action.type) {
+    case UPDATE_MOUSE_POSITION:
+      return {
+        x: action.x,
+        y: action.y
+      };
+    default:
+      return state;
+  }
+};
+
+const dateLabelReducer = (state = "", action) => {
+  switch (action.type) {
+    case UPDATE_DATE_LABEL:
+      return action.dateLabel
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   alternativeSupport: alternativeSupportReducer,
   historicSupport: historicSupportReducer,
-  windowDimensions: windowDimensionReducer
+  windowDimensions: windowDimensionReducer,
+  mousePosition: mousePositionReducer,
+  dateLabel: dateLabelReducer
 });

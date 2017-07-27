@@ -1,8 +1,10 @@
 import React from 'react';
 import Graf from './Graf.jsx';
 import { isEmpty } from '../../tools/helpers';
+import '../../css/UtfallOverTid.css'
+import DateLabel from './DateLabel.jsx';
 
-const UtfallOverTid = ({headline, historicSupport, width}) => {
+const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, mousePosition, updateDateLabel, dateLabel}) => {
   const drawData = isEmpty(historicSupport) ? [] : historicSupport.map((support, index) => ({
     date: support.date,
     apsp: support.data.apsp*100,
@@ -35,9 +37,10 @@ const UtfallOverTid = ({headline, historicSupport, width}) => {
   ];
 
   return (
-    <div className="modul">
+    <div className="modul graph" onMouseMove={updateMousePosition}>
       <h3>{headline}</h3>
-      {isEmpty(historicSupport) ? null : <Graf data={drawData} dataDescription={dataDescription} width={width} />}
+      {isEmpty(historicSupport) ? null : <Graf data={drawData} dataDescription={dataDescription} width={width} updateDateLabel={updateDateLabel} />}
+      <DateLabel dateLabel={dateLabel} xPosition={mousePosition.x} width={width} />
     </div>
   )
 }

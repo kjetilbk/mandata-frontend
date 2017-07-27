@@ -8,7 +8,9 @@ import UtfallOverTid from './utfallovertid/UtfallOverTid.jsx'
 import {
   fetchAlternativeSupport,
   fetchHistoricSupport,
-  updateWindowHeightAndWidth
+  updateWindowHeightAndWidth,
+  updateMouseXandY,
+  updateDateLabel
        } from '../actions/frontPageActions';
 
 class Content extends Component {
@@ -27,13 +29,16 @@ class Content extends Component {
   updateWindowDimensions(dispatch) {
     dispatch(updateWindowHeightAndWidth(window.innerWidth, window.innerHeight));
   }
+  updateMousePosition(x, y, dispatch) {
+    dispatch(updateMouseXandY(x, y));
+  }
   render() {
     return (
       <div className="body">
         <h1>Hvem vinner valget?</h1>
         <Flertallsbarometer headline="Sjanse for flertall i Stortinget" nydalenSupport={(this.props.alternativeSupport.hasOwnProperty("nydalen")) ? this.props.alternativeSupport.nydalen : -1} />
         <Koalisjonsalternativer headline="Mulige koalisjoner – og deres sjanser for flertall" alternativeSupport={this.props.alternativeSupport} />
-        <UtfallOverTid headline="Hvordan sjansene har utviklet seg over tid" historicSupport={this.props.historicSupport} width={this.props.windowDimensions.width} />
+        <UtfallOverTid headline="Hvordan sjansene har utviklet seg over tid" historicSupport={this.props.historicSupport} width={this.props.windowDimensions.width} updateMousePosition={(e) => {this.updateMousePosition(e.screenX, e.screenY, this.props.dispatch)}} mousePosition={this.props.mousePosition} updateDateLabel={dateLabel => this.props.dispatch(updateDateLabel(dateLabel))} dateLabel={this.props.dateLabel} />
       </div>
     );
   }
@@ -46,7 +51,9 @@ Content.propTypes = {
 const mapStateToProps = state => ({
   alternativeSupport: state.alternativeSupport,
   historicSupport: state.historicSupport,
-  windowDimensions: state.windowDimensions
+  windowDimensions: state.windowDimensions,
+  mousePosition: state.mousePosition,
+  dateLabel: state.dateLabel
 })
 
 export default connect(mapStateToProps)(Content);
