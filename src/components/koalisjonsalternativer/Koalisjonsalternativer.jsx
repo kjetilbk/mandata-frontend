@@ -10,7 +10,7 @@ const Koalisjonsalternativer = ({headline, alternativeSupport}) => {
   return (
     <div className="modul">
       <h3>{headline}</h3>
-      <div className="row">
+      <div className="alternativrad row">
         <Alternativ partners={[partier.ap, partier.sp, partier.sv]}
                     name="Rødgrønn"
                     support={"rg" in alternativeSupport ? formatProbability(alternativeSupport.rg) : -1} />
@@ -20,6 +20,18 @@ const Koalisjonsalternativer = ({headline, alternativeSupport}) => {
         <Alternativ partners={[partier.ap, partier.sp, partier.krf]}
                     name="Trafikklys"
                     support={"trafikklys" in alternativeSupport ? formatProbability(alternativeSupport.trafikklys) : -1}
+                    className="last-alt" />
+      </div>
+      <div className="alternativrad row">
+        <Alternativ partners={[partier.sp, partier.krf, partier.v]}
+                    name="Sentrum"
+                    support="N/A" />
+        <Alternativ partners={[partier.krf, partier.v, partier.h]}
+                    name="Sentrum-høyre"
+                    support="N/A" />
+        <Alternativ partners={[partier.h, partier.frp]}
+                    name="Blåblå"
+                    support="N/A"
                     className="last-alt" />
       </div>
     </div>
