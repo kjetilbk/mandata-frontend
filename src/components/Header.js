@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <div>
         <div className="App-header">
-          <img className="App-logo" src={logo} alt="mandata logo" />
+          <h1>flertall</h1>
         </div>
         <hr/>
       </div>

@@ -12,7 +12,7 @@ const Koalisjon = ({navn, partier, farge, posisjon, support}) => {
       <div className={navn.toLowerCase()}>
         <h2 className={"coalition-name "}>{navn}</h2>
         <div className={"partiforkortelser "}>{partiForkortelser}</div>
-        <div><p className={"coalition-support "+navn.toLowerCase()}>{support*100}<p className={"coalition-support-percentage "+navn.toLowerCase()}>%</p></p></div>
+        <div><p className={"coalition-support "+navn.toLowerCase()}>{support}<p className={"coalition-support-percentage "+navn.toLowerCase()}>%</p></p></div>
         <div className={navn.toLowerCase()}>{partiLogoer}</div>
       </div>
     </div>

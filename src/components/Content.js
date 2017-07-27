@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Flertallsbarometer from './flertallsbarometer/Flertallsbarometer';
+import Koalisjonsalternativer from './koalisjonsalternativer/Koalisjonsalternativer.jsx';
 import { fetchNydalenSupport } from '../actions/frontPageActions';
 
 class Content extends Component {
@@ -13,10 +14,9 @@ class Content extends Component {
   render() {
     return (
       <div className="body">
-        <h1>
-          Hvem vinner valget?
-        </h1>
-        <Flertallsbarometer nydalenSupport={this.props.nydalenSupport} />
+        <h1>Hvem vinner valget?</h1>
+        <Flertallsbarometer headline="Sjanse for flertall i Stortinget" nydalenSupport={this.props.nydalenSupport} />
+        <Koalisjonsalternativer headline="Mulige koalisjoner – og deres sjanser" />
       </div>
     );
   }

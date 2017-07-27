@@ -21,13 +21,11 @@ const nydalen = [
 
 class Flertallsbarometer extends Component {
   render() {
-    const rightSupport = parseFloat(this.props.nydalenSupport.toFixed(4));
-    const leftSupport = 1 - rightSupport;
+    const rightSupport = parseFloat((this.props.nydalenSupport*100).toFixed(2));
+    const leftSupport = 100 - rightSupport;
     return (
-      <div className="flertallsbarometer">
-        <h3>
-          Sjanse for flertall i Stortinget
-        </h3>
+      <div className="modul">
+        <h3>{this.props.headline}</h3>
         <div className="row">
           <div className="col-xs-6">
             <Koalisjon navn="Opposisjonen" partier={opposisjonen} farge="red" posisjon="left" support={leftSupport} />
@@ -36,7 +34,7 @@ class Flertallsbarometer extends Component {
             <Koalisjon navn="Nydalen" partier={nydalen} farge="blue" posisjon="right" support={rightSupport} />
           </div>
         </div>
-        <Barometer leftSupport={leftSupport} />
+        <Barometer leftSupport={leftSupport/100} />
       </div>
 
     );
