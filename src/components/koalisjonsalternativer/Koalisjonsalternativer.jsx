@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../css/Koalisjonsalternativer.css'
 import partier from '../../tools/partier';
-import formatProbability from '../../tools/helpers';
+import { formatProbability } from '../../tools/helpers';
 
 import Alternativ from './Alternativ.jsx'
 
