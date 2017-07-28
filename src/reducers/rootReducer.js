@@ -3,6 +3,7 @@ import {
   FETCH_ALTERNATIVE_SUPPORT,
   FETCH_HISTORIC_SUPPORT,
   FETCH_SPERREGRENSE_CHANCES,
+  FETCH_HISTORIC_SPERREGRENSE,
   UPDATE_WINDOW_DIMENSIONS,
   UPDATE_MOUSE_POSITION,
   UPDATE_DATE_LABEL
@@ -30,6 +31,15 @@ const sperregrenseReducer = (state = {mdg: -1, v: -1, sv: -1, r: -1, krf: -1}, a
   switch (action.type) {
     case FETCH_SPERREGRENSE_CHANCES:
       return action.sperregrenseChances;
+    default:
+      return state;
+  }
+};
+
+const historicSperregrenseReducer = (state = {}, action) => {
+  switch (action.type) {
+    case FETCH_HISTORIC_SPERREGRENSE:
+      return action.historicChances;
     default:
       return state;
   }
@@ -72,6 +82,7 @@ export default combineReducers({
   alternativeSupport: alternativeSupportReducer,
   historicSupport: historicSupportReducer,
   sperregrenseChances: sperregrenseReducer,
+  historicChances: historicSperregrenseReducer,
   windowDimensions: windowDimensionReducer,
   mousePosition: mousePositionReducer,
   dateLabel: dateLabelReducer

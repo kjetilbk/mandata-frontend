@@ -1,5 +1,5 @@
 import React from 'react';
-import Graf from './Graf.jsx';
+import Graf from '../graf/Graf.jsx';
 import { isEmpty } from '../../tools/helpers';
 import '../../css/UtfallOverTid.css'
 import DateLabel from './DateLabel.jsx';
@@ -46,7 +46,7 @@ const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, m
     {
       field: 'nydalen',
       name: 'Nydalen',
-      color: 'blue'
+      color: '#004F8B'
     },
     {
       field: 'hfrp',

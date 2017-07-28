@@ -6,9 +6,11 @@ import Flertallsbarometer from './flertallsbarometer/Flertallsbarometer';
 import Koalisjonsalternativer from './koalisjonsalternativer/Koalisjonsalternativer.jsx';
 import UtfallOverTid from './utfallovertid/UtfallOverTid.jsx'
 import Sperregrensedrama from './sperregrense/Sperregrensedrama.jsx';
+import SperregrenseGraf from './sperregrense/SperregrenseGraf.jsx';
 import {
   fetchAlternativeSupport,
   fetchHistoricSupport,
+  fetchHistoricChances,
   updateWindowHeightAndWidth,
   updateMouseXandY,
   updateDateLabel,
@@ -21,6 +23,7 @@ class Content extends Component {
     props.dispatch(fetchAlternativeSupport());
     props.dispatch(fetchHistoricSupport());
     props.dispatch(fetchSperregrenseChances());
+    props.dispatch(fetchHistoricChances());
   }
   componentDidMount() {
     this.updateWindowDimensions(this.props.dispatch);
@@ -43,6 +46,7 @@ class Content extends Component {
         <Koalisjonsalternativer headline="Mulige koalisjoner – og deres sjanser for flertall" alternativeSupport={this.props.alternativeSupport} />
         <UtfallOverTid headline="Hvordan sjansene har utviklet seg over tid" historicSupport={this.props.historicSupport} width={this.props.windowDimensions.width} updateMousePosition={(e) => {this.updateMousePosition(e.screenX, e.screenY, this.props.dispatch)}} mousePosition={this.props.mousePosition} updateDateLabel={dateLabel => this.props.dispatch(updateDateLabel(dateLabel))} dateLabel={this.props.dateLabel} />
         <Sperregrensedrama headline="Sjanse for å komme over sperregrensa" chances={this.props.sperregrenseChances} />
+        <SperregrenseGraf headline="Hvordan sperregrensesjansene har utviklet seg over tid" historicChances={this.props.historicChances} width={this.props.windowDimensions.width} />
       </div>
     );
   }
@@ -56,6 +60,7 @@ const mapStateToProps = state => ({
   alternativeSupport: state.alternativeSupport,
   historicSupport: state.historicSupport,
   sperregrenseChances: state.sperregrenseChances,
+  historicChances: state.historicChances,
   windowDimensions: state.windowDimensions,
   mousePosition: state.mousePosition,
   dateLabel: state.dateLabel
