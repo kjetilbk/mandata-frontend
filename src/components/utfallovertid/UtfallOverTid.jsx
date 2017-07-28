@@ -19,11 +19,6 @@ const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, m
   }));
   const dataDescription = [
     {
-      field: 'nydalen',
-      name: 'Nydalen',
-      color: 'blue'
-    },
-    {
       field: 'rg',
       name: 'Rødgrønn',
       color: 'red'
@@ -36,7 +31,7 @@ const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, m
     {
       field: 'trafikklys',
       name: 'Trafikklys',
-      color: 'yellow'
+      color: 'rgb(254, 205, 15)'
     },
     {
       field: 'sentrum',
@@ -47,6 +42,11 @@ const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, m
       field: 'sentrumh',
       name: 'Sentrum-høyre',
       color: 'lightblue'
+    },
+    {
+      field: 'nydalen',
+      name: 'Nydalen',
+      color: 'blue'
     },
     {
       field: 'hfrp',

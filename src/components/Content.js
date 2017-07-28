@@ -5,12 +5,14 @@ import PropTypes from 'prop-types';
 import Flertallsbarometer from './flertallsbarometer/Flertallsbarometer';
 import Koalisjonsalternativer from './koalisjonsalternativer/Koalisjonsalternativer.jsx';
 import UtfallOverTid from './utfallovertid/UtfallOverTid.jsx'
+import Sperregrensedrama from './sperregrense/Sperregrensedrama.jsx';
 import {
   fetchAlternativeSupport,
   fetchHistoricSupport,
   updateWindowHeightAndWidth,
   updateMouseXandY,
-  updateDateLabel
+  updateDateLabel,
+  fetchSperregrenseChances
        } from '../actions/frontPageActions';
 
 class Content extends Component {
@@ -18,6 +20,7 @@ class Content extends Component {
     super(props);
     props.dispatch(fetchAlternativeSupport());
     props.dispatch(fetchHistoricSupport());
+    props.dispatch(fetchSperregrenseChances());
   }
   componentDidMount() {
     this.updateWindowDimensions(this.props.dispatch);
@@ -39,6 +42,7 @@ class Content extends Component {
         <Flertallsbarometer headline="Sjanse for flertall i Stortinget" nydalenSupport={(this.props.alternativeSupport.hasOwnProperty("nydalen")) ? this.props.alternativeSupport.nydalen : -1} />
         <Koalisjonsalternativer headline="Mulige koalisjoner – og deres sjanser for flertall" alternativeSupport={this.props.alternativeSupport} />
         <UtfallOverTid headline="Hvordan sjansene har utviklet seg over tid" historicSupport={this.props.historicSupport} width={this.props.windowDimensions.width} updateMousePosition={(e) => {this.updateMousePosition(e.screenX, e.screenY, this.props.dispatch)}} mousePosition={this.props.mousePosition} updateDateLabel={dateLabel => this.props.dispatch(updateDateLabel(dateLabel))} dateLabel={this.props.dateLabel} />
+        <Sperregrensedrama headline="Sjanse for å komme over sperregrensa" chances={this.props.sperregrenseChances} />
       </div>
     );
   }
@@ -51,6 +55,7 @@ Content.propTypes = {
 const mapStateToProps = state => ({
   alternativeSupport: state.alternativeSupport,
   historicSupport: state.historicSupport,
+  sperregrenseChances: state.sperregrenseChances,
   windowDimensions: state.windowDimensions,
   mousePosition: state.mousePosition,
   dateLabel: state.dateLabel

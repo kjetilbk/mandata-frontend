@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import {
   FETCH_ALTERNATIVE_SUPPORT,
   FETCH_HISTORIC_SUPPORT,
+  FETCH_SPERREGRENSE_CHANCES,
   UPDATE_WINDOW_DIMENSIONS,
   UPDATE_MOUSE_POSITION,
   UPDATE_DATE_LABEL
@@ -20,6 +21,15 @@ const historicSupportReducer = (state = {}, action) => {
   switch (action.type) {
     case FETCH_HISTORIC_SUPPORT:
       return action.historicSupport;
+    default:
+      return state;
+  }
+};
+
+const sperregrenseReducer = (state = {mdg: -1, v: -1, sv: -1, r: -1, krf: -1}, action) => {
+  switch (action.type) {
+    case FETCH_SPERREGRENSE_CHANCES:
+      return action.sperregrenseChances;
     default:
       return state;
   }
@@ -61,6 +71,7 @@ const dateLabelReducer = (state = "", action) => {
 export default combineReducers({
   alternativeSupport: alternativeSupportReducer,
   historicSupport: historicSupportReducer,
+  sperregrenseChances: sperregrenseReducer,
   windowDimensions: windowDimensionReducer,
   mousePosition: mousePositionReducer,
   dateLabel: dateLabelReducer

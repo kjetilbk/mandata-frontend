@@ -1,5 +1,6 @@
 export const FETCH_ALTERNATIVE_SUPPORT = 'FETCH_ALTERNATIVE_SUPPORT';
 export const FETCH_HISTORIC_SUPPORT = 'FETCH_HISTORIC_SUPPORT';
+export const FETCH_SPERREGRENSE_CHANCES = 'FETCH_SPERREGRENSE_CHANCES';
 export const UPDATE_WINDOW_DIMENSIONS = 'UPDATE_WINDOW_DIMENSIONS';
 export const UPDATE_MOUSE_POSITION = 'UPDATE_MOUSE_POSITION';
 export const UPDATE_DATE_LABEL = 'UPDATE_DATE_LABEL';
@@ -24,6 +25,17 @@ export function fetchHistoricSupport() {
       .then(historicSupport => dispatch({
         type: FETCH_HISTORIC_SUPPORT,
         historicSupport
+      }));
+  };
+}
+
+export function fetchSperregrenseChances() {
+  return function (dispatch) {
+    return fetch(`${apiBaseUrl}/sperregrense`)
+      .then(response => response.json())
+      .then(sperregrenseChances => dispatch({
+        type: FETCH_SPERREGRENSE_CHANCES,
+        sperregrenseChances
       }));
   };
 }

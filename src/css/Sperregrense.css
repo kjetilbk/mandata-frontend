@@ -1,0 +1,44 @@
+.sperrewrapper {
+  text-align: center;
+}
+
+.sperregrenser {
+  display: inline-block;
+}
+
+.sperregrense {
+  display: inline-block;
+  text-align: center;
+  margin-right: 18px;
+}
+
+.last-parti{
+  margin-right: 0;
+}
+
+.sperregrense-parti {
+  height: 28px;
+  margin: 0 auto;
+}
+
+.sperregrense-chance {
+  margin: 0 auto;
+  font-family: 'Lato';
+  font-size: 0.85em;
+}
+
+@media (min-width: 48em) {
+    .sperregrense {
+      margin-right: 40px;
+    }
+
+    .sperregrense-parti {
+      height: 50px;
+    }
+
+    .sperregrense-chance {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin: 0.2em 0;
+    }
+}
