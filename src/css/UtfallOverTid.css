@@ -87,14 +87,25 @@
 }
 
 .legend-color {
-  width: 18px;
-  height: 18px;
+  width: 10px;
+  height: 10px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 5px;
 }
 
 .legend-name {
+  font-size: 0.9em;
   display: inline-block;
   margin: 0 auto;
+}
+
+@media (min-width: 48em){
+  .legend-color {
+    width: 18px;
+    height: 18px;
+  }
+  .legend-name {
+    font-size: 1em;
+  }
 }
