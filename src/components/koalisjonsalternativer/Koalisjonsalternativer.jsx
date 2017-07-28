@@ -25,13 +25,13 @@ const Koalisjonsalternativer = ({headline, alternativeSupport}) => {
       <div className="alternativrad row">
         <Alternativ partners={[partier.sp, partier.krf, partier.v]}
                     name="Sentrum"
-                    support="N/A" />
+                    support={"sentrum" in alternativeSupport ? formatProbability(alternativeSupport.sentrum) : -1} />
         <Alternativ partners={[partier.krf, partier.v, partier.h]}
                     name="Sentrum-høyre"
-                    support="N/A" />
+                    support={"sentrumh" in alternativeSupport ? formatProbability(alternativeSupport.sentrumh) : -1} />
         <Alternativ partners={[partier.h, partier.frp]}
                     name="Blåblå"
-                    support="N/A"
+                    support={"hfrp" in alternativeSupport ? formatProbability(alternativeSupport.hfrp) : -1}
                     className="last-alt" />
       </div>
     </div>
