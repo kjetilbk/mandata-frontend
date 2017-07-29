@@ -59,7 +59,7 @@
 }
 
 .date-label {
-  bottom: 375px;
+  bottom: 370px;
   position: absolute;
 }
 
@@ -98,6 +98,10 @@
   font-size: 0.9em;
   display: inline-block;
   margin: 0 auto;
+}
+
+.legend-support {
+  margin-top: 0.5em;
 }
 
 @media (min-width: 48em){

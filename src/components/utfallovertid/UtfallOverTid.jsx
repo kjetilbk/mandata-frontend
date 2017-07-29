@@ -2,10 +2,10 @@ import React from 'react';
 import Graf from '../graf/Graf.jsx';
 import { isEmpty } from '../../tools/helpers';
 import '../../css/UtfallOverTid.css'
-import DateLabel from './DateLabel.jsx';
-import Legend from './Legend.jsx'
+import DateLabel from '../graf/DateLabel.jsx';
+import Legend from '../graf/Legend.jsx'
 
-const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, mousePosition, updateDateLabel, dateLabel}) => {
+const UtfallOverTid = ({headline, historicSupport, width, mousePosition, updateDateLabel, dateLabel}) => {
   const drawData = isEmpty(historicSupport) ? [] : historicSupport.map((support, index) => ({
     date: support.date,
     apsp: support.data.apsp*100,
@@ -56,11 +56,11 @@ const UtfallOverTid = ({headline, historicSupport, width, updateMousePosition, m
   ];
 
   return (
-    <div className="modul graph" onMouseMove={updateMousePosition}>
+    <div className="modul graph">
       <h3>{headline}</h3>
-      <Legend dataDescription={dataDescription} support={drawData.filter(datapoint => new Date(datapoint.date).getTime() === new Date(dateLabel).getTime())[0]} />
+      <Legend dataDescription={dataDescription} chances={drawData.filter(datapoint => new Date(datapoint.date).getTime() === new Date(dateLabel).getTime())[0]} />
       {isEmpty(historicSupport) ? null : <Graf data={drawData} dataDescription={dataDescription} width={width} updateDateLabel={updateDateLabel} />}
-      <DateLabel dateLabel={dateLabel} xPosition={mousePosition.x} width={width} />
+      <DateLabel dateLabel={dateLabel} width={width} />
     </div>
   )
 }

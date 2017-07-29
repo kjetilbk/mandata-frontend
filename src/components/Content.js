@@ -12,8 +12,8 @@ import {
   fetchHistoricSupport,
   fetchHistoricChances,
   updateWindowHeightAndWidth,
-  updateMouseXandY,
-  updateDateLabel,
+  updateCoalitionDateLabel,
+  updateSperregrenseDateLabel,
   fetchSperregrenseChances
        } from '../actions/frontPageActions';
 
@@ -35,18 +35,23 @@ class Content extends Component {
   updateWindowDimensions(dispatch) {
     dispatch(updateWindowHeightAndWidth(window.innerWidth, window.innerHeight));
   }
-  updateMousePosition(x, y, dispatch) {
-    dispatch(updateMouseXandY(x, y));
-  }
   render() {
     return (
       <div className="body">
         <h1>Hvem vinner valget?</h1>
         <Flertallsbarometer headline="Sjanse for flertall i Stortinget" nydalenSupport={(this.props.alternativeSupport.hasOwnProperty("nydalen")) ? this.props.alternativeSupport.nydalen : -1} />
         <Koalisjonsalternativer headline="Mulige koalisjoner – og deres sjanser for flertall" alternativeSupport={this.props.alternativeSupport} />
-        <UtfallOverTid headline="Hvordan sjansene har utviklet seg over tid" historicSupport={this.props.historicSupport} width={this.props.windowDimensions.width} updateMousePosition={(e) => {this.updateMousePosition(e.screenX, e.screenY, this.props.dispatch)}} mousePosition={this.props.mousePosition} updateDateLabel={dateLabel => this.props.dispatch(updateDateLabel(dateLabel))} dateLabel={this.props.dateLabel} />
+        <UtfallOverTid headline="Hvordan sjansene har utviklet seg over tid"
+                       historicSupport={this.props.historicSupport}
+                       width={this.props.windowDimensions.width}
+                       updateDateLabel={dateLabel => this.props.dispatch(updateCoalitionDateLabel(dateLabel))}
+                       dateLabel={this.props.dateLabel.coalition} />
         <Sperregrensedrama headline="Sjanse for å komme over sperregrensa" chances={this.props.sperregrenseChances} />
-        <SperregrenseGraf headline="Hvordan sperregrensesjansene har utviklet seg over tid" historicChances={this.props.historicChances} width={this.props.windowDimensions.width} />
+        <SperregrenseGraf headline="Hvordan sperregrensesjansene har utviklet seg over tid"
+                          historicChances={this.props.historicChances}
+                          width={this.props.windowDimensions.width}
+                          updateDateLabel={dateLabel => this.props.dispatch(updateSperregrenseDateLabel(dateLabel))}
+                          dateLabel={this.props.dateLabel.sperregrense} />
       </div>
     );
   }
@@ -62,7 +67,6 @@ const mapStateToProps = state => ({
   sperregrenseChances: state.sperregrenseChances,
   historicChances: state.historicChances,
   windowDimensions: state.windowDimensions,
-  mousePosition: state.mousePosition,
   dateLabel: state.dateLabel
 })
 

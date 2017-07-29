@@ -5,8 +5,8 @@ import {
   FETCH_SPERREGRENSE_CHANCES,
   FETCH_HISTORIC_SPERREGRENSE,
   UPDATE_WINDOW_DIMENSIONS,
-  UPDATE_MOUSE_POSITION,
-  UPDATE_DATE_LABEL
+  UPDATE_COALITION_DATE_LABEL,
+  UPDATE_SPERREGRENSE_DATE_LABEL
 } from '../actions/frontPageActions';
 
 const alternativeSupportReducer = (state = {}, action) => {
@@ -57,22 +57,12 @@ const windowDimensionReducer = (state = {}, action) => {
   }
 };
 
-const mousePositionReducer = (state = {x: null, y: null}, action) => {
+const dateLabelReducer = (state = {coalition: "", sperregrense: ""}, action) => {
   switch (action.type) {
-    case UPDATE_MOUSE_POSITION:
-      return {
-        x: action.x,
-        y: action.y
-      };
-    default:
-      return state;
-  }
-};
-
-const dateLabelReducer = (state = "", action) => {
-  switch (action.type) {
-    case UPDATE_DATE_LABEL:
-      return action.dateLabel
+    case UPDATE_COALITION_DATE_LABEL:
+      return Object.assign({}, state, {coalition: action.dateLabel});
+    case UPDATE_SPERREGRENSE_DATE_LABEL:
+      return Object.assign({}, state, {sperregrense: action.dateLabel});
     default:
       return state;
   }
@@ -84,6 +74,5 @@ export default combineReducers({
   sperregrenseChances: sperregrenseReducer,
   historicChances: historicSperregrenseReducer,
   windowDimensions: windowDimensionReducer,
-  mousePosition: mousePositionReducer,
   dateLabel: dateLabelReducer
 });

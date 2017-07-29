@@ -3,8 +3,8 @@ export const FETCH_HISTORIC_SUPPORT = 'FETCH_HISTORIC_SUPPORT';
 export const FETCH_SPERREGRENSE_CHANCES = 'FETCH_SPERREGRENSE_CHANCES';
 export const FETCH_HISTORIC_SPERREGRENSE = 'FETCH_HISTORIC_SPERREGRENSE';
 export const UPDATE_WINDOW_DIMENSIONS = 'UPDATE_WINDOW_DIMENSIONS';
-export const UPDATE_MOUSE_POSITION = 'UPDATE_MOUSE_POSITION';
-export const UPDATE_DATE_LABEL = 'UPDATE_DATE_LABEL';
+export const UPDATE_COALITION_DATE_LABEL = 'UPDATE_COALITION_DATE_LABEL';
+export const UPDATE_SPERREGRENSE_DATE_LABEL = 'UPDATE_SPERREGRENSE_DATE_LABEL';
 
 const apiBaseUrl = "http://api.mandata.no";
 
@@ -60,17 +60,16 @@ export function updateWindowHeightAndWidth(width, height) {
   };
 };
 
-export function updateMouseXandY(x, y) {
+export function updateCoalitionDateLabel(dateLabel) {
   return {
-    type: UPDATE_MOUSE_POSITION,
-    x,
-    y
+    type: UPDATE_COALITION_DATE_LABEL,
+    dateLabel
   };
 };
 
-export function updateDateLabel(dateLabel) {
+export function updateSperregrenseDateLabel(dateLabel) {
   return {
-    type: UPDATE_DATE_LABEL,
+    type: UPDATE_SPERREGRENSE_DATE_LABEL,
     dateLabel
   };
 };
