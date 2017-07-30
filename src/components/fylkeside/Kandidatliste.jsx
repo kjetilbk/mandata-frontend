@@ -22,7 +22,7 @@ const Kandidatliste = ({parti, kandidater, sjanser}) => {
         <img className="fylkepartilogo" src={parti.logo} alt="partilogo" />
         <h3 className="fylkespartinavn">{parti.navn}</h3>
         <div className="tekstliste">
-          {kandidatliste}
+          {kandidatliste.slice(0,10)}
         </div>
       </div>
     </div>
