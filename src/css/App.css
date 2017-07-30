@@ -1,18 +1,93 @@
 .App {
   text-align: left;
   background-color: #fafafa;
+  font-weight: normal;
 }
 .App-header {
   height: 25px;
+  max-height: 25px;
   text-align: left;
   margin-right: 10px;
   margin-left: 10px;
 }
 
-.App-header > h1{
+.Chevron{
+    margin-right: 18px;
+    margin-top: 6px;
+    float: left;
+    position:relative;
+    display:inline-block;
+    height:16px;/*height should be double border*/
+}
+.Chevron:before,
+.Chevron:after{
+    position:absolute;
+    display:block;
+    content:"";
+    border:8px solid transparent;/*adjust size*/
+}
+/* Replace all text `top` below with left/right/bottom to rotate the chevron */
+.Chevron:before{
+    top:0;
+    border-top-color:black;/*Chevron Color*/
+}
+.Chevron:after{
+    top:-3px;/*adjust thickness*/
+    border-top-color:#fafafa;/*Match background colour*/
+}
+
+.app-logo {
+  display: inline-block;
+}
+
+.app-logo > h1{
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.fylkeslenker {
+  margin-top: 6px;
+  border-right: 1px solid grey;
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+
+.fylkeslenker:hover {
+  cursor: pointer;
+}
+
+.fylkeslenketekst {
+  color: black;
+  text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 10px;
+}
+
+.fylkeslenketekst.active {
+  font-weight: 600;
+}
+
+.fylkeschooser {
+
+}
+
+.om-siden {
+  margin-top: 6px;
+  display: inline-block;
+  float: right;
+}
+
+.om-tekst{
+  color: black;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.om-tekst:hover{
+  font-weight: 600;
 }
 
 .App-logo {
@@ -56,9 +131,21 @@
   font-weight: 600;
 }
 
-@media (min-width: 48.1em) {
+@media (min-width: 48em) {
   .App {
     text-align: center;
+  }
+
+  .fylkeschooser {
+    display: none;
+  }
+
+  .fylkeslenker {
+    display: none;
+  }
+
+  .fylkedropdown {
+    display: none;
   }
 
   .sidebar {

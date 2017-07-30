@@ -7,7 +7,8 @@ import {
   FETCH_MANDAT_CHANCES,
   UPDATE_WINDOW_DIMENSIONS,
   UPDATE_COALITION_DATE_LABEL,
-  UPDATE_SPERREGRENSE_DATE_LABEL
+  UPDATE_SPERREGRENSE_DATE_LABEL,
+  TOGGLE_FYLKES_CHOOSER
 } from '../actions/frontPageActions';
 import {removeSpacesAndDashesFromString} from '../tools/helpers';
 
@@ -81,6 +82,15 @@ const dateLabelReducer = (state = {coalition: "", sperregrense: ""}, action) => 
   }
 };
 
+const fylkesChooserReducer = (state = false, action) => {
+  switch (action.type) {
+    case TOGGLE_FYLKES_CHOOSER:
+      return state === true ? false : true;
+    default:
+      return state;
+    }
+}
+
 export default combineReducers({
   alternativeSupport: alternativeSupportReducer,
   historicSupport: historicSupportReducer,
@@ -88,5 +98,6 @@ export default combineReducers({
   historicChances: historicSperregrenseReducer,
   mandatChances: mandatReducer,
   windowDimensions: windowDimensionReducer,
-  dateLabel: dateLabelReducer
+  dateLabel: dateLabelReducer,
+  showFylkesChooser: fylkesChooserReducer
 });

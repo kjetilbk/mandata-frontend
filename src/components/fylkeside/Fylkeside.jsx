@@ -22,6 +22,9 @@ class Fylkeside extends Component {
            .sort((a, b) => a.Kandidatnr - b.Kandidatnr);
   }
   render(){
+    if(this.props["fylke"] === undefined){
+      return null;
+    }
     const sjanser = (removeSpacesAndDashesFromString(this.props.fylke.id) in this.props.mandatChances ? this.props.mandatChances[removeSpacesAndDashesFromString(this.props.fylke.id)] : {});
     return (
       <div>

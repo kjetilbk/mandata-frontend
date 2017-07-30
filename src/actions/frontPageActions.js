@@ -6,6 +6,7 @@ export const FETCH_HISTORIC_SPERREGRENSE = 'FETCH_HISTORIC_SPERREGRENSE';
 export const UPDATE_WINDOW_DIMENSIONS = 'UPDATE_WINDOW_DIMENSIONS';
 export const UPDATE_COALITION_DATE_LABEL = 'UPDATE_COALITION_DATE_LABEL';
 export const UPDATE_SPERREGRENSE_DATE_LABEL = 'UPDATE_SPERREGRENSE_DATE_LABEL';
+export const TOGGLE_FYLKES_CHOOSER = 'TOGGLE_FYLKES_CHOOSER';
 
 const apiBaseUrl = "http://api.mandata.no";
 
@@ -62,6 +63,12 @@ export function fetchHistoricChances() {
         type: FETCH_HISTORIC_SPERREGRENSE,
         historicChances
       }));
+  };
+}
+
+export function toggleFylkesChooser() {
+  return {
+    type: TOGGLE_FYLKES_CHOOSER
   };
 }
 

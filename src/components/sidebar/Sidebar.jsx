@@ -8,7 +8,7 @@ const Sidebar = ({location}) => {
       <div className="sidebar-content">
         <h4>Hvem kommer inn på Stortinget fra ditt fylke?</h4>
           <div className="sidebar-links">
-            {fylker.map(fylke => <Link key={fylke.id} className="fylkelenke" to={fylke.id}>{fylke.navn}</Link>)}
+            {fylker.map(fylke => <Link key={fylke.id} className="fylkelenke" to={"../fylke/"+fylke.id}>{fylke.navn}</Link>)}
           </div>
       </div>
     </div>

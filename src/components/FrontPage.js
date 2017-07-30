@@ -7,6 +7,7 @@ import Koalisjonsalternativer from './koalisjonsalternativer/Koalisjonsalternati
 import UtfallOverTid from './utfallovertid/UtfallOverTid.jsx'
 import Sperregrensedrama from './sperregrense/Sperregrensedrama.jsx';
 import SperregrenseGraf from './sperregrense/SperregrenseGraf.jsx';
+
 import Headline from './Headline.jsx';
 import {
   fetchAlternativeSupport,
@@ -68,7 +69,8 @@ const mapStateToProps = state => ({
   sperregrenseChances: state.sperregrenseChances,
   historicChances: state.historicChances,
   windowDimensions: state.windowDimensions,
-  dateLabel: state.dateLabel
+  dateLabel: state.dateLabel,
+  showFylkesChooser: state.showFylkesChooser
 })
 
 export default connect(mapStateToProps)(FrontPage);

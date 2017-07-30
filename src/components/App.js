@@ -9,6 +9,7 @@ import Header from './Header';
 import FrontPage from './FrontPage';
 import Sidebar from './sidebar/Sidebar.jsx';
 import Fylkeside from './fylkeside/Fylkeside.jsx';
+import Metode from './Metode.jsx'
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
           <Route path="/" component={Sidebar} />
           <div className="col-sm-10 col-xs-12">
             <Route exact path="/" component={FrontPage} />
-            <Route path="/:fylke" component={Fylkeside} />
+            <Route path="/fylke/:fylke" component={Fylkeside} />
+            <Route exact path="/om" component={Metode} />
           </div>
         </div>
       </div>
