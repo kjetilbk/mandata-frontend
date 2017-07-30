@@ -1,4 +1,5 @@
 import React from 'react';
+import {formatProbability} from '../../tools/helpers';
 
 const Kandidat = ({nummer, navn, sjanse}) => {
   return (
@@ -11,7 +12,7 @@ const Kandidat = ({nummer, navn, sjanse}) => {
       </div>
       <div className="col-xs-2">
         <div className="kandidatsjanse">
-          {sjanse}%
+          {sjanse > 0.1 ? formatProbability(sjanse, 1) : "<0.1"}%
         </div>
       </div>
     </div>

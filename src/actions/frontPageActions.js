@@ -1,5 +1,6 @@
 export const FETCH_ALTERNATIVE_SUPPORT = 'FETCH_ALTERNATIVE_SUPPORT';
 export const FETCH_HISTORIC_SUPPORT = 'FETCH_HISTORIC_SUPPORT';
+export const FETCH_MANDAT_CHANCES = 'FETCH_MANDAT_CHANCES';
 export const FETCH_SPERREGRENSE_CHANCES = 'FETCH_SPERREGRENSE_CHANCES';
 export const FETCH_HISTORIC_SPERREGRENSE = 'FETCH_HISTORIC_SPERREGRENSE';
 export const UPDATE_WINDOW_DIMENSIONS = 'UPDATE_WINDOW_DIMENSIONS';
@@ -37,6 +38,18 @@ export function fetchSperregrenseChances() {
       .then(sperregrenseChances => dispatch({
         type: FETCH_SPERREGRENSE_CHANCES,
         sperregrenseChances
+      }));
+  };
+}
+
+export function fetchMandatChances(fylke) {
+  return function (dispatch) {
+    return fetch(`${apiBaseUrl}/mandat/${fylke}`)
+      .then(response => response.json())
+      .then(mandatChances => dispatch({
+        type: FETCH_MANDAT_CHANCES,
+        mandatChances,
+        fylke
       }));
   };
 }

@@ -4,10 +4,12 @@ import {
   FETCH_HISTORIC_SUPPORT,
   FETCH_SPERREGRENSE_CHANCES,
   FETCH_HISTORIC_SPERREGRENSE,
+  FETCH_MANDAT_CHANCES,
   UPDATE_WINDOW_DIMENSIONS,
   UPDATE_COALITION_DATE_LABEL,
   UPDATE_SPERREGRENSE_DATE_LABEL
 } from '../actions/frontPageActions';
+import {removeSpacesAndDashesFromString} from '../tools/helpers';
 
 const alternativeSupportReducer = (state = {}, action) => {
   switch (action.type) {
@@ -45,6 +47,17 @@ const historicSperregrenseReducer = (state = {}, action) => {
   }
 };
 
+const mandatReducer = (state = {}, action) => {
+  switch (action.type) {
+    case FETCH_MANDAT_CHANCES:
+      let combineWithState = {};
+      combineWithState[removeSpacesAndDashesFromString(action.fylke)] = action.mandatChances;
+      return Object.assign({}, state, combineWithState);
+    default:
+      return state;
+  }
+};
+
 const windowDimensionReducer = (state = {}, action) => {
   switch (action.type) {
     case UPDATE_WINDOW_DIMENSIONS:
@@ -73,6 +86,7 @@ export default combineReducers({
   historicSupport: historicSupportReducer,
   sperregrenseChances: sperregrenseReducer,
   historicChances: historicSperregrenseReducer,
+  mandatChances: mandatReducer,
   windowDimensions: windowDimensionReducer,
   dateLabel: dateLabelReducer
 });

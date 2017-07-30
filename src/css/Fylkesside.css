@@ -20,6 +20,10 @@
   font-size: 1.2em;
 }
 
+.tilbakeknapp{
+  text-align: left;
+}
+
 .fylkepartilogo {
   height: 40px;
 }
