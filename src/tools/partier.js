@@ -33,13 +33,13 @@ export const r = {
 }
 
 export const mdg = {
-  navn: "Miljøpartiet de Grønne",
+  navn: "Miljøpartiet De Grønne",
   forkortelse: "MDG",
   logo: mdglogo
 }
 
 export const krf = {
-  navn: "Kristelig folkeparti",
+  navn: "Kristelig Folkeparti",
   forkortelse: "KrF",
   logo: krflogo
 }

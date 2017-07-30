@@ -6,10 +6,9 @@ import { formatProbability } from '../../tools/helpers';
 import Alternativ from './Alternativ.jsx'
 
 const Koalisjonsalternativer = ({headline, alternativeSupport}) => {
-  console.log(headline);
   return (
     <div className="modul">
-      <h3>{headline}</h3>
+      {headline}
       <div className="alternativrad row">
         <Alternativ partners={[partier.ap, partier.sp, partier.sv]}
                     name="Rødgrønn"

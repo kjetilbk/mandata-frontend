@@ -27,6 +27,7 @@
 .body {
   margin-right: 10px;
   margin-left: 10px;
+  max-width: 100%;
 }
 
 .modul{
@@ -35,8 +36,35 @@
   text-align: left;
 }
 
-@media (min-width: 48em) {
+.sidebar {
+  display: none;
+}
+
+.sidebar-links {
+  display: block;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.fylkelenke {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.fylkelenke:hover{
+  font-weight: 600;
+}
+
+@media (min-width: 48.1em) {
   .App {
     text-align: center;
+  }
+
+  .sidebar {
+    display: flex;
+    margin-top: -10px;
+    max-width: 250px;
+    border-right: 1px solid grey;
   }
 }

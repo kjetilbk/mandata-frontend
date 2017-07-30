@@ -26,7 +26,7 @@ class Flertallsbarometer extends Component {
     const leftSupport = 100 - rightSupport;
     return (
       <div className="modul">
-        <h3>{this.props.headline}</h3>
+        {this.props.headline}
         <div className="row">
           <div className="col-xs-6">
             <Koalisjon navn="Opposisjonen" partier={opposisjonen} farge="red" posisjon="left" support={leftSupport} />

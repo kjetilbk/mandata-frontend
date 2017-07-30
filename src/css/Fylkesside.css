@@ -1,0 +1,43 @@
+.kandidatbokser {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 3rem;
+}
+
+.kandidatliste {
+  background-color: #f3f3f3;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  height: 100%;
+  text-align: center;
+}
+
+.kandidat{
+  margin-bottom: 0.2em;
+}
+
+.kandidatsjanse {
+  font-size: 1.2em;
+}
+
+.fylkepartilogo {
+  height: 40px;
+}
+
+.fylkespartinavn {
+  margin-top: 0.5em;
+}
+
+.tekstliste {
+  text-align: left;
+  margin: 0 auto;
+  margin-left: 0.5rem;
+}
+
+.kandidatnummer {
+  text-align: center;
+}
+
+.underoverskrift {
+  text-align: left;
+}

@@ -57,7 +57,7 @@ const UtfallOverTid = ({headline, historicSupport, width, mousePosition, updateD
 
   return (
     <div className="modul graph">
-      <h3>{headline}</h3>
+      {headline}
       <Legend dataDescription={dataDescription} chances={drawData.filter(datapoint => new Date(datapoint.date).getTime() === new Date(dateLabel).getTime())[0]} />
       {isEmpty(historicSupport) ? null : <Graf data={drawData} dataDescription={dataDescription} width={width} updateDateLabel={updateDateLabel} />}
       <DateLabel dateLabel={dateLabel} width={width} />

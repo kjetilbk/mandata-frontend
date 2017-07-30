@@ -7,6 +7,7 @@ import Koalisjonsalternativer from './koalisjonsalternativer/Koalisjonsalternati
 import UtfallOverTid from './utfallovertid/UtfallOverTid.jsx'
 import Sperregrensedrama from './sperregrense/Sperregrensedrama.jsx';
 import SperregrenseGraf from './sperregrense/SperregrenseGraf.jsx';
+import Headline from './Headline.jsx';
 import {
   fetchAlternativeSupport,
   fetchHistoricSupport,
@@ -17,7 +18,7 @@ import {
   fetchSperregrenseChances
        } from '../actions/frontPageActions';
 
-class Content extends Component {
+class FrontPage extends Component {
   constructor(props){
     super(props);
     props.dispatch(fetchAlternativeSupport());
@@ -39,15 +40,15 @@ class Content extends Component {
     return (
       <div className="body">
         <h1>Hvem vinner valget?</h1>
-        <Flertallsbarometer headline="Sjanse for flertall i Stortinget" nydalenSupport={(this.props.alternativeSupport.hasOwnProperty("nydalen")) ? this.props.alternativeSupport.nydalen : -1} />
-        <Koalisjonsalternativer headline="Mulige koalisjoner – og deres sjanser for flertall" alternativeSupport={this.props.alternativeSupport} />
-        <UtfallOverTid headline="Hvordan sjansene har utviklet seg over tid"
+        <Flertallsbarometer headline={<Headline text="Sjanse for flertall i Stortinget" />} nydalenSupport={(this.props.alternativeSupport.hasOwnProperty("nydalen")) ? this.props.alternativeSupport.nydalen : -1} />
+        <Koalisjonsalternativer headline={<Headline text="Mulige koalisjoner – og deres sjanser for flertall" />} alternativeSupport={this.props.alternativeSupport} />
+        <UtfallOverTid headline={<Headline text="Hvordan sjansene har utviklet seg over tid" />}
                        historicSupport={this.props.historicSupport}
                        width={this.props.windowDimensions.width}
                        updateDateLabel={dateLabel => this.props.dispatch(updateCoalitionDateLabel(dateLabel))}
                        dateLabel={this.props.dateLabel.coalition} />
-        <Sperregrensedrama headline="Sjanse for å komme over sperregrensa" chances={this.props.sperregrenseChances} />
-        <SperregrenseGraf headline="Hvordan sperregrensesjansene har utviklet seg over tid"
+        <Sperregrensedrama headline={<Headline text="Sjanse for å komme over sperregrensa" />} chances={this.props.sperregrenseChances} />
+        <SperregrenseGraf headline={<Headline text="Hvordan sperregrensesjansene har utviklet seg over tid" />}
                           historicChances={this.props.historicChances}
                           width={this.props.windowDimensions.width}
                           updateDateLabel={dateLabel => this.props.dispatch(updateSperregrenseDateLabel(dateLabel))}
@@ -57,7 +58,7 @@ class Content extends Component {
   }
 }
 
-Content.propTypes = {
+FrontPage.propTypes = {
   alternativeSupport: PropTypes.object
 }
 
@@ -70,4 +71,4 @@ const mapStateToProps = state => ({
   dateLabel: state.dateLabel
 })
 
-export default connect(mapStateToProps)(Content);
+export default connect(mapStateToProps)(FrontPage);

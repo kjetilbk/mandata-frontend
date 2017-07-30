@@ -6,7 +6,7 @@ import '../../css/Sperregrense.css'
 const Sperregrensedrama = ({headline, chances}) => {
   return (
     <div className="modul">
-      <h3>{headline}</h3>
+      {headline}
       <div className="sperrewrapper">
         <div className="sperregrenser">
           <Parti parti={partier.r} chances={chances} />
