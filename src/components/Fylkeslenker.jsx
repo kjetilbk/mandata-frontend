@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import fylker from '../tools/fylker';
 
-const Fylkeslenker = ({showFylkesChooser}) => {
-  const fylkeElementer = fylker.map(fylke => <Link key={fylke.id} className="fylkelenke" to={"../fylke/"+fylke.id}>{fylke.navn}</Link>)
+const Fylkeslenker = ({showFylkesChooser, toggleChooser}) => {
+  const fylkeElementer = fylker.map(fylke => <Link key={fylke.id} onClick={toggleChooser} className="fylkelenke" to={"../fylke/"+fylke.id}>{fylke.navn}</Link>)
   return (
     <div className="fylkeschooser">
       <div className="row">

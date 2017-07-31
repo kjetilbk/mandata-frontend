@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Metode = ({}) => {
+const Metode = () => {
   return (
     <div>Kommer!</div>
   )

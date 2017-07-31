@@ -1,6 +1,5 @@
 import React from 'react';
 import Kandidat from './Kandidat.jsx';
-import {isEmpty} from '../../tools/helpers';
 
 const convertExactChancesToMinChances = sjanser => {
   let toReturn = {};

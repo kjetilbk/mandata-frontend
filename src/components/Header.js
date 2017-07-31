@@ -24,7 +24,7 @@ class Header extends Component {
           </div>
         </div>
         <hr/>
-        {this.props.showFylkesChooser ? <Fylkeslenker /> : null}
+        {this.props.showFylkesChooser ? <Fylkeslenker toggleChooser={() => this.props.dispatch(toggleFylkesChooser())} /> : null}
       </div>
     );
   }
