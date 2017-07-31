@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {logPageView} from '../tools/googleanalytics';
 
-const Metode = () => {
-  return (
-    <div>Kommer!</div>
-  )
+class Metode extends Component {
+  componentDidMount(){
+    logPageView(this.props.location.pathname);
+  }
+  render(){
+    return (
+      <div>Kommer!</div>
+    )
+  }
 }
 
 export default Metode;

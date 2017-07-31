@@ -20,7 +20,7 @@ const App = () => {
         <div className="row">
           <Route path="/" component={Sidebar} />
           <div className="col-sm-10 col-xs-12">
-            <Route exact path="/" component={FrontPage} />
+            <Route exact path="/" component={FrontPage} a={2} />
             <Route path="/fylke/:fylke" component={Fylkeside} />
             <Route exact path="/om" component={Metode} />
           </div>

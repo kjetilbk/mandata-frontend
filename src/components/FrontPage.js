@@ -19,6 +19,8 @@ import {
   fetchSperregrenseChances
        } from '../actions/frontPageActions';
 
+import { logPageView } from '../tools/googleanalytics';
+
 class FrontPage extends Component {
   constructor(props){
     super(props);
@@ -28,6 +30,7 @@ class FrontPage extends Component {
     props.dispatch(fetchHistoricChances());
   }
   componentDidMount() {
+    logPageView(this.props.location.pathname);
     this.updateWindowDimensions(this.props.dispatch);
     window.addEventListener('resize', () => {this.updateWindowDimensions(this.props.dispatch)});
   }

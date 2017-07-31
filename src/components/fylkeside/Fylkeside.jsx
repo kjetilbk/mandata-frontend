@@ -6,14 +6,17 @@ import '../../css/Fylkesside.css';
 import Kandidatliste from './Kandidatliste.jsx';
 import partier from '../../tools/partier';
 import {removeSpacesAndDashesFromString} from '../../tools/helpers';
+import { logPageView } from '../../tools/googleanalytics';
 import {fetchMandatChances} from '../../actions/frontPageActions';
 
 class Fylkeside extends Component {
   componentDidMount() {
+    logPageView(this.props.location.pathname);
     this.props.dispatch(fetchMandatChances(this.props.fylke.navn.toLowerCase()));
   }
   componentDidUpdate(prevProps){
     if (prevProps.fylke.navn !== this.props.fylke.navn) {
+      logPageView(this.props.location.pathname);
       this.props.dispatch(fetchMandatChances(this.props.fylke.navn.toLowerCase()));
     }
   }
