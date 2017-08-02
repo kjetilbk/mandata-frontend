@@ -10,10 +10,10 @@ class Header extends Component {
       <div>
         <div className="App-header">
           <div className="app-logo">
-            <h1>flertall</h1>
+            <Link className="app-logo home-link" to="/"><h1 className="logo-header">flertall</h1></Link>
           </div>
           <div className="om-siden">
-            <Link to="om" className="om-tekst">Metode</Link>
+            <Link to="/om" className="om-tekst">Metode</Link>
           </div>
           <div className="fylkeslenker">
             <a onClick={() => {this.props.dispatch(toggleFylkesChooser())}}

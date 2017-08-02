@@ -36,11 +36,25 @@
     border-top-color:#fafafa;/*Match background colour*/
 }
 
+h1 {
+  display: inline-block;
+}
+
 .app-logo {
   display: inline-block;
 }
 
+.home-link {
+  color: black;
+}
+
 .app-logo > h1{
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.logo-header{
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 0;
@@ -109,6 +123,11 @@
   max-width: 1000px;
   margin: 0 auto;
   text-align: left;
+}
+
+.metode-tekst {
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .sidebar {
