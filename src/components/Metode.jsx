@@ -101,11 +101,11 @@ class Metode extends Component {
            på at koalisjonen ligger svært godt an. Uansett tilstand er det dog
            ingen grunn til å roe ned valgkampen. Tvert imot: Flertalls sjanser forandrer
            seg med meningsmålingene, og dersom årets innspurt minner om forrige Stortingsvalgsinnspurt,
-           blir det nok et jevnere valg.
+           blir det nok et jevnt valg.
            <hr />
            <h4>Siden er laget av:</h4>
            <a href="mailto:kjetil.bugge.kristoffersen@gmail.com">Kjetil Bugge Kristoffersen</a> <br/><br />
-           Tusen takk til Eirik Hjorthaug Kiil for hjelp med utforminga av sida {"<3"}
+           Tusen takk til Eirik Hjorthaug Kiil for hjelp med utforminga av sida
 
         </div>
       </div>

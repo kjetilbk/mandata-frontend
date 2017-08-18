@@ -23,7 +23,7 @@ const nydalen = [
 class Flertallsbarometer extends Component {
   render() {
     const rightSupport = formatProbability(this.props.nydalenSupport);
-    const leftSupport = 100 - rightSupport;
+    const leftSupport = formatProbability((100 - rightSupport)/100);
     return (
       <div className="modul">
         {this.props.headline}
