@@ -1,15 +1,26 @@
 import React from 'react';
 import Kandidat from './Kandidat.jsx';
 
-const convertExactChancesToMinChances = sjanser => {
-  let toReturn = {};
-  for (var key in sjanser) {
-    toReturn[key] = sjanser[key];
-    for(var i = 0; i < key; i++) {
-      toReturn[i] = (i in sjanser ? toReturn[i] + sjanser[key] : 0);
-    }
+const chanceObjectToList = sjanser => {
+  let list = []
+  for (let key in sjanser) {
+    list[parseInt(key, 10)] = sjanser[parseInt(key, 10)]
   }
-  return toReturn;
+  return list;
+}
+
+const sumOfListElementsFromStartIndex = (startIndex, listToSum) => (
+  listToSum.slice(startIndex, listToSum.length).reduce((sum, current) => sum += current)
+)
+
+
+const convertExactChancesToMinChances = sjanser => {
+  const sjanseListe = chanceObjectToList(sjanser)
+  const minChances = sjanseListe.map((chance, index, theList) => {
+    const minChance = sumOfListElementsFromStartIndex(index, theList)
+    return minChance;
+  })
+  return minChances;
 }
 
 const Kandidatliste = ({parti, kandidater, sjanser}) => {

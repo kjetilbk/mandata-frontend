@@ -12,7 +12,7 @@ const Kandidat = ({nummer, navn, sjanse}) => {
       </div>
       <div className="col-xs-2">
         <div className="kandidatsjanse">
-          {sjanse > 0.1 ? formatProbability(sjanse, 1) : "<0.1"}%
+          {sjanse > 0.01 ? formatProbability(sjanse, 1) : "<0.1"}%
         </div>
       </div>
     </div>
